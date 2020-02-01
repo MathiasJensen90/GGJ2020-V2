@@ -20,8 +20,7 @@ public class TakeItemCommand : Command
             avatar.Item = _traySpot.item;
             _traySpot.item = null;
         }
-
-        _traySpot.item.IsTaken = true;
+        
 
         IsDone = true;
     }
