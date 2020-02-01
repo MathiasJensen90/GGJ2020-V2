@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     public Player Avatar;
     public Bloodbank Bloodbank;
 
+
     public int QueueSize;
 
     private Queue<Command> CommandQueue;
@@ -44,7 +45,7 @@ public class PlayerController : MonoBehaviour
         var hit = Physics2D.Raycast(ray.origin, ray.direction, Mathf.Infinity);
 
         if (hit.collider != null) {
-            var item = hit.collider.gameObject.GetComponent<Item>();
+            var item = hit.collider.gameObject.GetComponent<TraySpot>().item;
             if (item != null) {
                 Debug.Log("Hit item");
                 if (CommandQueue.Count < QueueSize) {

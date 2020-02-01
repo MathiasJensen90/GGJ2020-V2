@@ -19,6 +19,8 @@ public class TakeItemCommand : Command
             avatar.Item = _item;
         }
 
+        _item.IsTaken = true;
+
         IsDone = true;
     }
 }

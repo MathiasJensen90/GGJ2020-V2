@@ -2,9 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Tray : MonoBehaviour
+public class TraySpot : MonoBehaviour
 {
-    public Item[] Items;
-
-
+    public Item item;
 }
