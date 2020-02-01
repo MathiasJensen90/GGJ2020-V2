@@ -618,7 +618,7 @@ MonoBehaviour:
   IsDead: 0
   BloodSprite: {fileID: 3578535383831113286}
   Item: {fileID: 0}
-  Blood: 100
+  Blood: 50
   MaxBlood: 100
 --- !u!61 &7474077861444488576
 BoxCollider2D:
