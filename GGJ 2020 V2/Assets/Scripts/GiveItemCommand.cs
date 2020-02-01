@@ -15,10 +15,10 @@ public class GiveItemCommand : Command
 
         var temp = _patient.Item;
         _patient.Item = avatar.Item;
-        if (_patient.Item)
-        {
+        if (_patient.Item != null) {
             _patient.Item.transform.parent = _patient.MountingPoint.transform;
             _patient.Item.transform.localPosition = Vector2.zero;
+            _patient.Item.transform.localRotation = Quaternion.identity;
         }
 
         avatar.Item = temp;
