@@ -21,8 +21,6 @@ public class TakeItemCommand : Command
             _traySpot.item = null;
         }
 
-        _traySpot.item.IsTaken = true;
-
         IsDone = true;
     }
 }
