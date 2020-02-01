@@ -2785,7 +2785,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1337332610
 Transform:
   m_ObjectHideFlags: 0
@@ -2795,7 +2795,7 @@ Transform:
   m_GameObject: {fileID: 1337332609}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 2.05, y: 1.05, z: 0}
-  m_LocalScale: {x: 1.7445658, y: 1.7445658, z: 1.7445658}
+  m_LocalScale: {x: 9.992723, y: 9.992723, z: 9.992723}
   m_Children: []
   m_Father: {fileID: 1019133125}
   m_RootOrder: 10
@@ -2849,6 +2849,31 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4622654842449317696, guid: 64394f8833b41a84992e5c4878ce9211,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5579609284846641002, guid: 64394f8833b41a84992e5c4878ce9211,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6944745234629194848, guid: 64394f8833b41a84992e5c4878ce9211,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7028079773288205567, guid: 64394f8833b41a84992e5c4878ce9211,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8127674752902672155, guid: 64394f8833b41a84992e5c4878ce9211,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 8751486792760203112, guid: 64394f8833b41a84992e5c4878ce9211,
         type: 3}
       propertyPath: Camera
@@ -2923,6 +2948,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 9141321968577135629, guid: 64394f8833b41a84992e5c4878ce9211,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 64394f8833b41a84992e5c4878ce9211, type: 3}
@@ -3334,11 +3364,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_LightType: 3
+  m_LightType: 1
   m_BlendStyleIndex: 0
-  m_FalloffIntensity: 0.5
+  m_FalloffIntensity: 1
   m_Color: {r: 1, g: 0.52744776, b: 0.11792451, a: 1}
-  m_Intensity: 0.22
+  m_Intensity: 0.14
   m_LightVolumeOpacity: 0
   m_ApplyToSortingLayers: 00000000
   m_LightCookieSprite: {fileID: 0}
@@ -3356,13 +3386,13 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 0.5
+  m_ShapeLightFalloffSize: 1.3
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
-  - {x: -0.5, y: -0.5, z: 0}
-  - {x: 0.5, y: -0.5, z: 0}
-  - {x: 0.5, y: 0.5, z: 0}
-  - {x: -0.5, y: 0.5, z: 0}
+  - {x: -0.35576442, y: -0.4519097, z: 0}
+  - {x: 0.384855, y: -0.4685858, z: 0}
+  - {x: 0.38485485, y: 0.40575773, z: 0}
+  - {x: -0.3325162, y: 0.43717182, z: 0}
 --- !u!1 &1863446083
 GameObject:
   m_ObjectHideFlags: 0
