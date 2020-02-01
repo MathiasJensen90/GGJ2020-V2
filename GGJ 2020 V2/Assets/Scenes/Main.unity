@@ -2972,7 +2972,7 @@ PrefabInstance:
         type: 3}
       propertyPath: Bloodbank
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1879010564}
     - target: {fileID: 8751486792760203114, guid: 64394f8833b41a84992e5c4878ce9211,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -3628,6 +3628,18 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   - {x: 0.5, y: 0.5, z: 0}
   - {x: -0.5, y: 0.5, z: 0}
+--- !u!114 &1879010564 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6358437092438445750, guid: b20719778f48d1d4b88a67771d020465,
+    type: 3}
+  m_PrefabInstance: {fileID: 7944789933934185159}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3eb9889213b3c2043a090de53c44c5b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1905897201
 PrefabInstance:
   m_ObjectHideFlags: 0
