@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7944789933927427371}
   - component: {fileID: 1690526426244622121}
   - component: {fileID: 5391052467732368547}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Bloodbank
   m_TagString: Untagged
   m_Icon: {fileID: 0}
