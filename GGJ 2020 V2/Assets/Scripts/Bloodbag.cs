@@ -11,9 +11,11 @@ public class Bloodbag : Item
 
     public override void Effect(Patient patient)
     {
-        if (Remaining > HealAmount * Time.deltaTime) {
-            patient.Heal(HealAmount);
-            Remaining -= HealAmount * Time.deltaTime;
+        var frameHealAmount = HealAmount * Time.deltaTime;
+        if (Remaining > frameHealAmount) {
+            
+            patient.Heal(frameHealAmount);
+            Remaining -= frameHealAmount;
         } else if (Remaining > 0f) {
             patient.Heal(Remaining);
             Remaining = 0f;
