@@ -247,6 +247,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7240479336071673733}
   - component: {fileID: 7240479336071673732}
+  - component: {fileID: 1980662319693376116}
   m_Layer: 0
   m_Name: clockDisplay
   m_TagString: Untagged
@@ -319,3 +320,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1980662319693376116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7240479336071673851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f99b47d9fd400f64a8d62be69ab7f65d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CountdownInSeconds: 60
+  PointFactor: 1
+  PointMultiplier: 1
+  Text: {fileID: 4218302625563073645}
+  GameOver: {fileID: 11400000, guid: b0a130041966a814888179955d94fc8d, type: 2}
