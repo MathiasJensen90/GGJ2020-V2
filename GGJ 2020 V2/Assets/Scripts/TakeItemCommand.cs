@@ -13,7 +13,7 @@ public class TakeItemCommand : Command
 
     public override IEnumerator ExecuteCommand(Player avatar)
     {
-        yield return avatar.Move(_traySpot.transform.position);
+        yield return avatar.Move(_traySpot.transform.root.position);
 
         if (avatar.Item == null && _traySpot.item !=null)
         {

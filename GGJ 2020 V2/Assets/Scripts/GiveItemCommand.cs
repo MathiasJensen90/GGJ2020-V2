@@ -10,7 +10,7 @@ public class GiveItemCommand : Command
 
     public override IEnumerator ExecuteCommand(Player avatar)
     {
-        yield return avatar.Move(_patient.transform.position);
+        yield return avatar.Move(_patient.transform.root.position);
 
         var temp = _patient.Item;
         _patient.Item = avatar.Item;
