@@ -33,7 +33,7 @@ public class Patient : MonoBehaviour
 
             if (Blood <= 0f)
             {
-                PatientDead.Raise();
+                PatientDead.Raise(this);
                 GetComponent<SpriteRenderer>().color = Color.black;
                 IsDead = true;
             }
