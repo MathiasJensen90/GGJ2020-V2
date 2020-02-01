@@ -9,6 +9,8 @@ public class Patient : MonoBehaviour
 
     public GameEvent PatientDead;
 
+    public bool IsDead=false;
+
     public SpriteRenderer BloodSprite;
 
     public Item Item;
@@ -25,15 +27,23 @@ public class Patient : MonoBehaviour
 
     void Update()
     {
-        Blood -= BloodLossRate * Time.deltaTime;
+        if (!IsDead)
+        {
+            Blood -= BloodLossRate * Time.deltaTime;
 
-        if (Blood <= 0f) {
-            PatientDead.Raise();
+            if (Blood <= 0f)
+            {
+                PatientDead.Raise(this.gameObject);
+                GetComponent<SpriteRenderer>().color = Color.black;
+                IsDead = true;
+            }
+
+            BloodSprite.size = Vector2.Lerp(new Vector2(BloodSprite.size.x, 0f), new Vector2(BloodSprite.size.x, _bloodHeight), Blood / MaxBlood);
+
+            Item?.Effect(this);
         }
 
-        BloodSprite.size = Vector2.Lerp(new Vector2(BloodSprite.size.x, 0f), new Vector2(BloodSprite.size.x, _bloodHeight), Blood / MaxBlood);
-
-        Item?.Effect(this);
+        
     }
 
     public void Heal(float healAmount)

@@ -14,7 +14,11 @@ public class GiveItemCommand : Command
 
         var temp = _patient.Item;
         _patient.Item = avatar.Item;
+        if (_patient.Item)
+            _patient.Item.transform.parent = _patient.transform;
         avatar.Item = temp;
+        if (avatar.Item)
+            avatar.Item.transform.parent = avatar.transform;
 
         IsDone = true;
     }

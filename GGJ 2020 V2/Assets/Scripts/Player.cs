@@ -6,7 +6,6 @@ public class Player : MonoBehaviour
 {
     public Item Item;
 
-    private bool _isMoving = false;
     public float _movementSpeed = 0.1f;
     private float _middleYPos=0;
 

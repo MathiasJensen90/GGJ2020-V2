@@ -18,6 +18,7 @@ public class TakeItemCommand : Command
         if (avatar.Item == null)
         {
             avatar.Item = _traySpot.item;
+            avatar.Item.transform.parent = avatar.transform;
             _traySpot.item = null;
         }
 
