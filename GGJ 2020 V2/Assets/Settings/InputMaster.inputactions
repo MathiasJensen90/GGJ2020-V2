@@ -1,0 +1,33 @@
+{
+    "name": "InputMaster",
+    "maps": [
+        {
+            "name": "Core",
+            "id": "e5a7dd28-aaea-4a55-94f7-55c4752d53e6",
+            "actions": [
+                {
+                    "name": "Select",
+                    "type": "Button",
+                    "id": "d23ae542-a780-40d4-a827-7b13bb741e00",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "129e1b7f-8635-442c-a692-df8c7e860831",
+                    "path": "<Pointer>/press",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Select",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
