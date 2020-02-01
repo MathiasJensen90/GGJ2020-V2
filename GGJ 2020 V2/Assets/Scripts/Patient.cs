@@ -7,9 +7,14 @@ public class Patient : MonoBehaviour
     // How much blood to lose per second
     public float BloodLossRate = 5f;
 
-    public GameEvent PatientDead;
+    public float CureTimeout = 5f;
+
+    public GameEvent PatientDead, PatientCured, ReplenishBB;
 
     public GameObject MountingPoint;
+
+    public GameObject PatientAvatar;
+    public BoxCollider2D Collider2D;
 
     public bool IsDead=false;
 
@@ -17,7 +22,7 @@ public class Patient : MonoBehaviour
 
     public Item Item;
 
-    public float Blood = 100f;
+    public float Blood = 50f;
 
     public float MaxBlood = 100f;
 
@@ -51,5 +56,24 @@ public class Patient : MonoBehaviour
     public void Heal(float healAmount)
     {
         Blood = Mathf.Min(Blood + healAmount, 100.0f);
+    }
+
+    public void Cure() {
+        if (Item) {
+            Destroy(Item.gameObject);
+            ReplenishBB.Raise();
+        }
+        PatientCured.Raise(this.gameObject);
+        StartCoroutine(CureRoutine());
+    }
+
+    private IEnumerator CureRoutine() {
+        Collider2D.enabled = false;
+        PatientAvatar.gameObject.SetActive(false);
+
+        yield return new WaitForSeconds(CureTimeout);
+
+        Collider2D.enabled = true;
+        PatientAvatar.gameObject.SetActive(true);
     }
 }

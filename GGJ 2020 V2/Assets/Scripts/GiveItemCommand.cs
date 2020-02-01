@@ -13,6 +13,12 @@ public class GiveItemCommand : Command
     {
         yield return avatar.Move(_patient.transform.root.position);
 
+        if (_patient.Blood > 90f) {
+            _patient.Cure();
+            IsDone = true;
+            yield break;
+        }
+
         var temp = _patient.Item;
         _patient.Item = avatar.Item;
         if (_patient.Item != null) {
