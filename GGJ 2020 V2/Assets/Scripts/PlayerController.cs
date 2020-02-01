@@ -33,7 +33,7 @@ public class PlayerController : MonoBehaviour
         } else {
             if (CommandQueue.Count > 0) {
                 _currentCommand = CommandQueue.Dequeue();
-                _currentCommand?.ExecuteCommand(Avatar);
+                this.StartCoroutine(_currentCommand.ExecuteCommand(Avatar));
             }
         }
     }

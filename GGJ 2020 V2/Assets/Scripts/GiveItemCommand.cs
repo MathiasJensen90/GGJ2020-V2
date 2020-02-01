@@ -1,4 +1,6 @@
-﻿public class GiveItemCommand : Command
+﻿using System.Collections;
+
+public class GiveItemCommand : Command
 {
     public Patient _patient;
 
@@ -6,7 +8,8 @@
         _patient = patient;
     }
 
-    public override void ExecuteCommand(Player avatar)
+    public override IEnumerator ExecuteCommand(Player avatar)
     {
+        return null;
     }
 }
