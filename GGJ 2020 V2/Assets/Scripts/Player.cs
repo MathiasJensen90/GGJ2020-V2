@@ -12,9 +12,13 @@ public class Player : MonoBehaviour
 
     public IEnumerator Move(Vector3 targetPos)
     {
+        if(targetPos == transform.position)
+        {
+        }
+
         //move to middle first
         var below = transform.position.x < _middleXPos;
-        while (transform.position.x != _middleXPos)
+        while (transform.position.x != _middleXPos && targetPos != transform.position)
         {
             if (below) {
                 transform.Translate(_movementSpeed * Time.deltaTime, 0, 0);
