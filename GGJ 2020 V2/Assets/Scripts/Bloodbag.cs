@@ -9,6 +9,13 @@ public class Bloodbag : Item
 
     public float HealAmount = 5f;
 
+    [SerializeField]
+    private SpriteRenderer SpriteRenderer;
+
+    void Update() {
+        SpriteRenderer.size = Vector2.Lerp(new Vector2(1f, 0f), new Vector2(1f, 1f), Remaining / Capacity);
+    }
+
     public override void Effect(Patient patient)
     {
         var frameHealAmount = HealAmount * Time.deltaTime;
