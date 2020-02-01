@@ -10,7 +10,8 @@ public class TraySpot : MonoBehaviour
     {
         if (item != null)
         {
-            item = Instantiate(item);
+            item = Instantiate(item, transform);
+            item.transform.localPosition = Vector2.zero;
         }
     }
 
