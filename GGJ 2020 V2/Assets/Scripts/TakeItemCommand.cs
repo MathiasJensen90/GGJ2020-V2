@@ -1,10 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class TakeItemCommand : Command
+﻿public class TakeItemCommand : Command
 {
-    public Item Item;
+    private Item _item;
+
+    public bool IsDone;
+
+    public TakeItemCommand(Item item) {
+        _item = item;
+    }
 
     public override void ExecuteCommand(Player avatar)
     {
