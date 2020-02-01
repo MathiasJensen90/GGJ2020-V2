@@ -8,6 +8,8 @@ public class PlayerController : MonoBehaviour
     public Player Avatar;
     public Bloodbank Bloodbank;
 
+    public ScoreManager ScoreManager;
+
 
     public int QueueSize;
 
@@ -18,6 +20,7 @@ public class PlayerController : MonoBehaviour
     private Command _currentCommand;
 
     void Awake() {
+        ScoreManager.ResetScore();
         _inputMaster = new InputMaster();
 
         _inputMaster.Core.Select.performed += context => {

@@ -15,4 +15,9 @@ public class ScoreManager : ScriptableObject
     public void IncrementDied() {
         PatientsDied++;
     }
+
+    public void ResetScore() {
+        PatientsCured = 0;
+        PatientsDied = 0;
+    }
 }
