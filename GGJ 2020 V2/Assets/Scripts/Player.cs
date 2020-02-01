@@ -23,13 +23,13 @@ public class Player : MonoBehaviour
     IEnumerator Move(Vector3 targetPos)
     {
         bool hasBeenToMiddle = false;
+        bool _isMoving = true;
 
         while (transform.position != targetPos)
         {
             //first move to the middle of the screen
             if (transform.position.y != _middleYPos && !hasBeenToMiddle)
             {
-                Debug.Log("is here");
                 if (transform.position.y < _middleYPos)
                 {
                     transform.Translate(0, _movementSpeed, 0);
