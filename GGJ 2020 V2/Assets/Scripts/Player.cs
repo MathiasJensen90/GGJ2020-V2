@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public Item Item;
     private bool _isMoving = false;
     private float _movementSpeed = 0.1f;
     private float _middleYPos=0;
@@ -19,7 +20,7 @@ public class Player : MonoBehaviour
         
     }
 
-    IEnumerator Move(Vector3 targetPos)
+    public IEnumerator Move(Vector3 targetPos)
     {
         bool hasBeenToMiddle = false;
         bool _isMoving = true;

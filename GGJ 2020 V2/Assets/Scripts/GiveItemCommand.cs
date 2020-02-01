@@ -10,6 +10,13 @@ public class GiveItemCommand : Command
 
     public override IEnumerator ExecuteCommand(Player avatar)
     {
-        return null;
+        yield return avatar.Move(_patient.transform.position);
+
+        if (avatar.Item != null) {
+            _patient.Item = avatar.Item;
+            avatar.Item = null;
+        }
+
+        IsDone = true;
     }
 }

@@ -11,6 +11,8 @@ public class Patient : MonoBehaviour
 
     public SpriteRenderer BloodSprite;
 
+    public Item Item;
+
     public float Blood = 100f;
 
     public float MaxBlood = 100f;
