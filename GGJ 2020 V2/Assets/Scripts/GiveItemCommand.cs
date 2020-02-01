@@ -12,10 +12,9 @@ public class GiveItemCommand : Command
     {
         yield return avatar.Move(_patient.transform.position);
 
-        if (avatar.Item != null) {
-            _patient.Item = avatar.Item;
-            avatar.Item = null;
-        }
+        var temp = _patient.Item;
+        _patient.Item = avatar.Item;
+        avatar.Item = temp;
 
         IsDone = true;
     }
