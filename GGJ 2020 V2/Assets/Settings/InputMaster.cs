@@ -25,6 +25,14 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""MousePos"",
+                    ""type"": ""Value"",
+                    ""id"": ""ff3c5855-d608-44d0-879b-a8296ce5c101"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -38,6 +46,17 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""action"": ""Select"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""71b891f4-69b3-4832-8e4f-354ca6514c99"",
+                    ""path"": ""<Pointer>/position"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MousePos"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -47,6 +66,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
         // Core
         m_Core = asset.FindActionMap("Core", throwIfNotFound: true);
         m_Core_Select = m_Core.FindAction("Select", throwIfNotFound: true);
+        m_Core_MousePos = m_Core.FindAction("MousePos", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -97,11 +117,13 @@ public class @InputMaster : IInputActionCollection, IDisposable
     private readonly InputActionMap m_Core;
     private ICoreActions m_CoreActionsCallbackInterface;
     private readonly InputAction m_Core_Select;
+    private readonly InputAction m_Core_MousePos;
     public struct CoreActions
     {
         private @InputMaster m_Wrapper;
         public CoreActions(@InputMaster wrapper) { m_Wrapper = wrapper; }
         public InputAction @Select => m_Wrapper.m_Core_Select;
+        public InputAction @MousePos => m_Wrapper.m_Core_MousePos;
         public InputActionMap Get() { return m_Wrapper.m_Core; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -114,6 +136,9 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 @Select.started -= m_Wrapper.m_CoreActionsCallbackInterface.OnSelect;
                 @Select.performed -= m_Wrapper.m_CoreActionsCallbackInterface.OnSelect;
                 @Select.canceled -= m_Wrapper.m_CoreActionsCallbackInterface.OnSelect;
+                @MousePos.started -= m_Wrapper.m_CoreActionsCallbackInterface.OnMousePos;
+                @MousePos.performed -= m_Wrapper.m_CoreActionsCallbackInterface.OnMousePos;
+                @MousePos.canceled -= m_Wrapper.m_CoreActionsCallbackInterface.OnMousePos;
             }
             m_Wrapper.m_CoreActionsCallbackInterface = instance;
             if (instance != null)
@@ -121,6 +146,9 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 @Select.started += instance.OnSelect;
                 @Select.performed += instance.OnSelect;
                 @Select.canceled += instance.OnSelect;
+                @MousePos.started += instance.OnMousePos;
+                @MousePos.performed += instance.OnMousePos;
+                @MousePos.canceled += instance.OnMousePos;
             }
         }
     }
@@ -128,5 +156,6 @@ public class @InputMaster : IInputActionCollection, IDisposable
     public interface ICoreActions
     {
         void OnSelect(InputAction.CallbackContext context);
+        void OnMousePos(InputAction.CallbackContext context);
     }
 }
