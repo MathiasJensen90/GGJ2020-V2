@@ -4,22 +4,22 @@ using UnityEngine;
 public class TakeItemCommand : Command
 {
     private Item _item;
+    private TraySpot _traySpot;
 
+    public TakeItemCommand(TraySpot traySpot) {
+        _traySpot = traySpot;
 
-    public TakeItemCommand(Item item) {
-        _item = item;
     }
 
     public override IEnumerator ExecuteCommand(Player avatar)
     {
-        yield return avatar.Move(_item.transform.position);
+        yield return avatar.Move(_traySpot.transform.position);
 
         if (avatar.Item == null)
         {
-            avatar.Item = _item;
+            avatar.Item = _traySpot.item;
+            _traySpot.item = null;
         }
-
-        _item.IsTaken = true;
 
         IsDone = true;
     }
