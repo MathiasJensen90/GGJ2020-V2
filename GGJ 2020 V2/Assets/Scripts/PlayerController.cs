@@ -42,7 +42,7 @@ public class PlayerController : MonoBehaviour
 
     public void Select(Vector2 screenPos) {
         var ray = Camera.ScreenPointToRay(screenPos);
-        var hit = Physics2D.Raycast(ray.origin, ray.direction, Mathf.Infinity);
+        var hit = Physics2D.Raycast(ray.origin, ray.direction, Mathf.Infinity, LayerMask.GetMask("Clickable") | LayerMask.GetMask("Both"));
 
         if (hit.collider != null) {
             var traySpot= hit.collider.gameObject.GetComponent<TraySpot>();

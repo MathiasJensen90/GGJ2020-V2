@@ -15,7 +15,7 @@ public class Highlighter : MonoBehaviour
 
     void Update() {
         var ray = Camera.ScreenPointToRay(Mouse.current.position.ReadValue());
-        var hit = Physics2D.Raycast(ray.origin, ray.direction, Mathf.Infinity);
+        var hit = Physics2D.Raycast(ray.origin, ray.direction, Mathf.Infinity, LayerMask.GetMask("Highlightable") | LayerMask.GetMask("Both"));
 
         Debug.Log(_lastHit?.material.shader.GetPropertyName(2));
         if (hit.collider != null) {
