@@ -40,7 +40,7 @@ public class Patient : MonoBehaviour
                 IsDead = true;
             }
 
-            BloodSprite.size = Vector2.Lerp(new Vector2(BloodSprite.size.x, 0f), new Vector2(BloodSprite.size.x, _bloodHeight), Blood / MaxBlood);
+            BloodSprite.transform.localScale = Vector3.Lerp(new Vector3(1f, 0f, 1f), Vector3.one, Blood / MaxBlood);
 
             Item?.Effect(this);
         }
