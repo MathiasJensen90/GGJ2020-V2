@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Shader Graphs_highlightShader
-  m_Shader: {fileID: -6465566751694194690, guid: e37af13865ec5ff4bae99e07306909ec,
+  m_Name: BloodBagHighlight
+  m_Shader: {fileID: -6465566751694194690, guid: 5417c5859d0b16d4ba9b563c18c45b23,
     type: 3}
   m_ShaderKeywords: ETC1_EXTERNAL_ALPHA
   m_LightmapFlags: 4
@@ -20,11 +20,27 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _AlphaTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 2800000, guid: 47b16ab1965462043b05155b0e2470f6, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _MaskTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NormalMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Floats:
+    - _EnableExternalAlpha: 0
     - _OutlineThickness: 0
     m_Colors:
-    - _OutlineColor: {r: 3.5262375, g: 3.5760524, b: 0.32049516, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Flip: {r: 1, g: 1, b: 1, a: 1}
+    - _OutlineColor: {r: 0.7411765, g: 0.7490196, b: 0.07058824, a: 1}
+    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
