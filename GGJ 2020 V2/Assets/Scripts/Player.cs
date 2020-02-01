@@ -10,17 +10,6 @@ public class Player : MonoBehaviour
     public float _movementSpeed = 0.1f;
     private float _middleYPos=0;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        StartCoroutine(Move(new Vector3(5, -3, 0)));
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public IEnumerator Move(Vector3 targetPos)
     {
