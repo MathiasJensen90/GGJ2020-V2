@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using UnityEngine;
 
 public class TakeItemCommand : Command
 {
@@ -11,6 +12,13 @@ public class TakeItemCommand : Command
 
     public override IEnumerator ExecuteCommand(Player avatar)
     {
-        return null;
+        yield return avatar.Move(_item.transform.position);
+
+        if (avatar.Item == null)
+        {
+            avatar.Item = _item;
+        }
+
+        IsDone = true;
     }
 }
