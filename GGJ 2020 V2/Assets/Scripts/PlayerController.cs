@@ -49,7 +49,7 @@ public class PlayerController : MonoBehaviour
             if (traySpot != null) {
                 Debug.Log("Hit item");
                 if (CommandQueue.Count < QueueSize) {
-                    CommandQueue.Enqueue(new TakeItemCommand(traySpot));
+                    QueueCommand(new TakeItemCommand(traySpot));
                 }
             }
 
@@ -57,7 +57,7 @@ public class PlayerController : MonoBehaviour
             if (patient != null) {
                 Debug.Log("Hit patient");
                 if (CommandQueue.Count < QueueSize) {
-                    CommandQueue.Enqueue(new GiveItemCommand(patient));
+                    QueueCommand(new GiveItemCommand(patient));
                 }
             }
 
@@ -65,7 +65,7 @@ public class PlayerController : MonoBehaviour
             if (bloodBank != null) {
                 Debug.Log("Hit bloodbank");
                 if (CommandQueue.Count < QueueSize) {
-                    CommandQueue.Enqueue(new FillBloodBagCommand(Bloodbank));
+                    QueueCommand(new FillBloodBagCommand(Bloodbank));
                 }
             }
         }
@@ -77,5 +77,20 @@ public class PlayerController : MonoBehaviour
 
     private void OnDisable() {
         _inputMaster.Disable();
+    }
+
+    private void QueueCommand(Command command)
+    {
+        /*if(CommandQueue.Count == 0 && command != _currentCommand)
+        {
+            CommandQueue.Enqueue(command);
+            Debug.Log(command.);
+        }
+
+        else if((command.GetType()!= CommandQueue.Peek().GetType() && command.GetType() != _currentCommand.GetType()) )
+        {
+            
+        }*/
+        CommandQueue.Enqueue(command);
     }
 }
