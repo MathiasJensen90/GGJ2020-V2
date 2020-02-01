@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     public Player Avatar;
     public Bloodbank Bloodbank;
 
+
     public int QueueSize;
 
     private Queue<Command> CommandQueue;

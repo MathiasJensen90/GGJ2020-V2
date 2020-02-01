@@ -32,6 +32,8 @@ public class Patient : MonoBehaviour
         }
 
         BloodSprite.size = Vector2.Lerp(new Vector2(BloodSprite.size.x, 0f), new Vector2(BloodSprite.size.x, _bloodHeight), Blood / MaxBlood);
+
+        Item?.Effect(this);
     }
 
     public void Heal(float healAmount)

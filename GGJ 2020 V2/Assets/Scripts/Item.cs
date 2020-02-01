@@ -4,5 +4,6 @@ using UnityEngine;
 
 public abstract class Item : MonoBehaviour
 {
+    public bool IsTaken = false;
     public abstract void Effect(Patient patient);
 }

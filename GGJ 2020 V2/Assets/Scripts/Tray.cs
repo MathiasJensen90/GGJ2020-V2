@@ -4,15 +4,7 @@ using UnityEngine;
 
 public class Tray : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public Item[] Items;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
 }
