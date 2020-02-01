@@ -608,12 +608,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BloodLossRate: 5
+  CureTimeout: 5
   PatientDead: {fileID: 11400000, guid: 75a77e6c52a77bd4daa2b0be93ced42c, type: 2}
+  PatientCured: {fileID: 11400000, guid: bf182c43c3932d84f92040a4a09ba070, type: 2}
+  ReplenishBB: {fileID: 11400000, guid: 8d3b31696ef864543896114713fb574b, type: 2}
   MountingPoint: {fileID: 1789539802324926191}
+  PatientAvatar: {fileID: 7832698877847757860}
+  Collider2D: {fileID: 7474077861444488576}
   IsDead: 0
   BloodSprite: {fileID: 3578535383831113286}
   Item: {fileID: 0}
-  Blood: 100
+  Blood: 50
   MaxBlood: 100
 --- !u!61 &7474077861444488576
 BoxCollider2D:
