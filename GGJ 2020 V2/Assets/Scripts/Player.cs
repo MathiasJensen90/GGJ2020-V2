@@ -5,13 +5,15 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public Item Item;
+
     private bool _isMoving = false;
-    private float _movementSpeed = 0.1f;
+    public float _movementSpeed = 0.1f;
     private float _middleYPos=0;
 
     // Start is called before the first frame update
     void Start()
     {
+        StartCoroutine(Move(new Vector3(5, -3, 0)));
     }
 
     // Update is called once per frame
@@ -22,67 +24,53 @@ public class Player : MonoBehaviour
 
     public IEnumerator Move(Vector3 targetPos)
     {
-        bool hasBeenToMiddle = false;
-        bool _isMoving = true;
-
-        while (transform.position != targetPos)
+        var below = transform.position.y < _middleYPos;
+        while (transform.position.y != _middleYPos)
         {
-            //first move to the middle of the screen
-            if (transform.position.y != _middleYPos && !hasBeenToMiddle)
-            {
-                if (transform.position.y < _middleYPos)
-                {
-                    transform.Translate(0, _movementSpeed, 0);
-                    if (transform.position.y > _middleYPos)
-                    {
-                        transform.position = new Vector3(transform.position.x, _middleYPos, 0);
-                        hasBeenToMiddle = true;
-                    }
+            if (below) {
+                transform.Translate(0, _movementSpeed * Time.deltaTime, 0);
+                if (transform.position.y > _middleYPos) {
+                    transform.position = new Vector2(transform.position.x, _middleYPos);
                 }
-                if (transform.position.y > _middleYPos)
-                {
-                    transform.Translate(0, -_movementSpeed, 0);
-                    if (transform.position.y < _middleYPos)
-                    {
-                        transform.position = new Vector3(transform.position.x, _middleYPos, 0);
-                        hasBeenToMiddle = true;
-                    }
+            } else {
+                transform.Translate(0, -_movementSpeed * Time.deltaTime, 0);
+                if (transform.position.y < _middleYPos) {
+                    transform.position = new Vector2(transform.position.x, _middleYPos);
                 }
             }
-            //move horizontally
-            else if (transform.position.x != targetPos.x)
+
+            yield return null;
+       }
+
+        below = transform.position.x < targetPos.x;
+        while (transform.position.x != targetPos.x) {
+            if (below)
             {
-                if (transform.position.x < targetPos.x)
-                {
-                    transform.Translate(_movementSpeed, 0, 0);
-                    if (transform.position.x > targetPos.x) { transform.position = new Vector3(targetPos.x, transform.position.y, 0); }
-                }
-                if (transform.position.x > targetPos.x)
-                {
-                    transform.Translate(0, -_movementSpeed, 0);
-                    if (transform.position.x < targetPos.x) { transform.position = new Vector3(targetPos.x, transform.position.y, 0); }
-                }
-            }
-            //move vertically
-            else if (transform.position.y != targetPos.y)
-            {
-                if (transform.position.y < targetPos.y)
-                {
-                    transform.Translate(0, _movementSpeed, 0);
-                    if (transform.position.y > targetPos.y) { transform.position = new Vector3(transform.position.x, targetPos.y, 0); }
-                }
-                if (transform.position.y > targetPos.y)
-                {
-                    transform.Translate(0, -_movementSpeed, 0);
-                    if (transform.position.y < targetPos.y) { transform.position = new Vector3(transform.position.x, targetPos.y, 0); }
-                }
+                transform.Translate(_movementSpeed * Time.deltaTime, 0, 0);
+                if (transform.position.x > targetPos.x) { transform.position = new Vector2(targetPos.x, transform.position.y); }
+            } else {
+                transform.Translate(-_movementSpeed * Time.deltaTime, 0, 0);
+                if (transform.position.x < targetPos.x) { transform.position = new Vector2(targetPos.x, transform.position.y); }
             }
 
             yield return null;
         }
 
-        
-        
+        below = transform.position.y < targetPos.y;
+        while (transform.position.y != targetPos.y) {
+            if (below)
+            {
+                transform.Translate(0, _movementSpeed * Time.deltaTime, 0);
+                if (transform.position.y > targetPos.y) { transform.position = new Vector2(transform.position.x, targetPos.y); }
+            } else {
+                transform.Translate(0, -_movementSpeed * Time.deltaTime, 0);
+                if (transform.position.y < targetPos.y) { transform.position = new Vector2(transform.position.x, targetPos.y); }
+            }
+
+            yield return null;
+        }
+
+        transform.position = targetPos;
     }
 
     private void PreciseMove(Vector3 movement)
