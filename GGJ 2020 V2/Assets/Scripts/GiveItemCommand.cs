@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using UnityEngine;
 
 public class GiveItemCommand : Command
 {
@@ -15,7 +16,8 @@ public class GiveItemCommand : Command
         var temp = _patient.Item;
         _patient.Item = avatar.Item;
         if (_patient.Item)
-            _patient.Item.transform.parent = _patient.transform;
+            _patient.Item.transform.parent = _patient.MountingPoint.transform;
+            _patient.Item.transform.localPosition = Vector2.zero;
         avatar.Item = temp;
         if (avatar.Item)
             avatar.Item.transform.parent = avatar.transform;

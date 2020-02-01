@@ -9,6 +9,8 @@ public class Patient : MonoBehaviour
 
     public GameEvent PatientDead;
 
+    public GameObject MountingPoint;
+
     public bool IsDead=false;
 
     public SpriteRenderer BloodSprite;

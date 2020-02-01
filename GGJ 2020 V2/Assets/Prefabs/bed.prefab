@@ -1,37 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!95 &7589358569042461759
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 222995740481013477}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: e397d77353f8ba2498d4c894aa8278b1, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &6896464003091276714
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 222995740481013477}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 582d6772a682f0c40ae8bb12271883b7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  patient: {fileID: 8535767643870073106}
 --- !u!1 &335658833585946559
 GameObject:
   m_ObjectHideFlags: 0
@@ -244,6 +212,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BloodLossRate: 5
   PatientDead: {fileID: 11400000, guid: 75a77e6c52a77bd4daa2b0be93ced42c, type: 2}
+  MountingPoint: {fileID: 1789539802324926191}
   IsDead: 0
   BloodSprite: {fileID: 3496633436405862575}
   Item: {fileID: 0}
@@ -455,6 +424,31 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6968018628921646012, guid: 8d45c55b837dbb142bd59ae4721f20aa,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6968018628921646012, guid: 8d45c55b837dbb142bd59ae4721f20aa,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6968018628921646012, guid: 8d45c55b837dbb142bd59ae4721f20aa,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 6968018628921646012, guid: 8d45c55b837dbb142bd59ae4721f20aa,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 6968018628921646012, guid: 8d45c55b837dbb142bd59ae4721f20aa,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -90
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8d45c55b837dbb142bd59ae4721f20aa, type: 3}
 --- !u!4 &222995740932474277 stripped
@@ -463,9 +457,9 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 3847605846866464658}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &222995740481013477 stripped
+--- !u!1 &1789539802324926191 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 3926378356953237879, guid: 8d45c55b837dbb142bd59ae4721f20aa,
+  m_CorrespondingSourceObject: {fileID: 3292353265191022973, guid: 8d45c55b837dbb142bd59ae4721f20aa,
     type: 3}
   m_PrefabInstance: {fileID: 3847605846866464658}
   m_PrefabAsset: {fileID: 0}
