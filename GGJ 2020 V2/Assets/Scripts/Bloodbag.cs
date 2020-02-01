@@ -13,7 +13,7 @@ public class Bloodbag : Item
     private SpriteRenderer SpriteRenderer;
 
     void Update() {
-        SpriteRenderer.size = Vector2.Lerp(new Vector2(1f, 0f), new Vector2(1f, 1f), Remaining / Capacity);
+        SpriteRenderer.transform.localScale = Vector3.Lerp(new Vector3(1f, 0f, 1f), Vector3.one, Remaining / Capacity);
     }
 
     public override void Effect(Patient patient)
