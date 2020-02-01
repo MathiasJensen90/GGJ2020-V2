@@ -15,7 +15,7 @@ public class TakeItemCommand : Command
     {
         yield return avatar.Move(_traySpot.transform.position);
 
-        if (avatar.Item == null)
+        if (avatar.Item == null && _traySpot.item !=null)
         {
             avatar.Item = _traySpot.item;
             avatar.Item.transform.parent = avatar.transform;
