@@ -19,6 +19,8 @@ public class TakeItemCommand : Command
         {
             avatar.Item = _traySpot.item;
             avatar.Item.transform.parent = avatar.transform;
+            //pickup position
+            avatar.Item.transform.position = avatar.transform.position + new Vector3(0,-0.5f,0);
             _traySpot.item = null;
         }
 
