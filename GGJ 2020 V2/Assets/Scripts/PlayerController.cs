@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     public Camera Camera;
     public Player Avatar;
+    public Bloodbank Bloodbank;
 
     public int QueueSize;
 
@@ -63,7 +64,7 @@ public class PlayerController : MonoBehaviour
             if (bloodBank != null) {
                 Debug.Log("Hit bloodbank");
                 if (CommandQueue.Count < QueueSize) {
-                    CommandQueue.Enqueue(new FillBloodBagCommand());
+                    CommandQueue.Enqueue(new FillBloodBagCommand(Bloodbank));
                 }
             }
         }

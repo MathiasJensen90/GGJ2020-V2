@@ -4,15 +4,9 @@ using UnityEngine;
 
 public class Bloodbank : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public float RefillAmount;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public void RefillBloodbag(Bloodbag bloodbag) {
+        bloodbag.Remaining = bloodbag.Capacity;
     }
 }

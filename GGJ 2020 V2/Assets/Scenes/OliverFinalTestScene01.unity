@@ -358,6 +358,7 @@ MonoBehaviour:
   BloodLossRate: 5
   PatientDead: {fileID: 11400000, guid: 75a77e6c52a77bd4daa2b0be93ced42c, type: 2}
   BloodSprite: {fileID: 2016232190}
+  Item: {fileID: 0}
   Blood: 100
   MaxBlood: 100
 --- !u!212 &345212830
@@ -601,6 +602,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce84227c3a95ff04ca7a939b3a36ec5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Capacity: 33
+  Remaining: 0
   HealAmount: 33
 --- !u!61 &839310641
 BoxCollider2D:
@@ -723,6 +726,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce84227c3a95ff04ca7a939b3a36ec5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Capacity: 33
+  Remaining: 0
   HealAmount: 33
 --- !u!61 &1101834150
 BoxCollider2D:
@@ -782,7 +787,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Camera: {fileID: 238775575}
-  Avatar: {fileID: 0}
+  Avatar: {fileID: 1154964293}
+  Bloodbank: {fileID: 1693384519}
   QueueSize: 2
 --- !u!114 &1154964293
 MonoBehaviour:
@@ -796,6 +802,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0abe67da196ec045bd32117ca8632a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Item: {fileID: 0}
+  _movementSpeed: 5
 --- !u!212 &1154964294
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -920,6 +928,7 @@ MonoBehaviour:
   BloodLossRate: 5
   PatientDead: {fileID: 11400000, guid: 75a77e6c52a77bd4daa2b0be93ced42c, type: 2}
   BloodSprite: {fileID: 1902475152}
+  Item: {fileID: 0}
   Blood: 100
   MaxBlood: 100
 --- !u!212 &1235115607
@@ -1128,6 +1137,7 @@ MonoBehaviour:
   BloodLossRate: 5
   PatientDead: {fileID: 11400000, guid: 75a77e6c52a77bd4daa2b0be93ced42c, type: 2}
   BloodSprite: {fileID: 1256752658}
+  Item: {fileID: 0}
   Blood: 100
   MaxBlood: 100
 --- !u!212 &1484713230
@@ -1310,6 +1320,7 @@ MonoBehaviour:
   BloodLossRate: 5
   PatientDead: {fileID: 11400000, guid: 75a77e6c52a77bd4daa2b0be93ced42c, type: 2}
   BloodSprite: {fileID: 1526121304}
+  Item: {fileID: 0}
   Blood: 100
   MaxBlood: 100
 --- !u!212 &1600508528
@@ -1437,6 +1448,7 @@ MonoBehaviour:
   BloodLossRate: 5
   PatientDead: {fileID: 11400000, guid: 75a77e6c52a77bd4daa2b0be93ced42c, type: 2}
   BloodSprite: {fileID: 1911299928}
+  Item: {fileID: 0}
   Blood: 100
   MaxBlood: 100
 --- !u!212 &1602137686
@@ -1625,6 +1637,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3eb9889213b3c2043a090de53c44c5b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  RefillAmount: 0
 --- !u!61 &1693384520
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1746,6 +1759,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce84227c3a95ff04ca7a939b3a36ec5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Capacity: 33
+  Remaining: 0
   HealAmount: 33
 --- !u!61 &1827901617
 BoxCollider2D:
@@ -2076,6 +2091,7 @@ MonoBehaviour:
   BloodLossRate: 5
   PatientDead: {fileID: 11400000, guid: 75a77e6c52a77bd4daa2b0be93ced42c, type: 2}
   BloodSprite: {fileID: 730496098}
+  Item: {fileID: 0}
   Blood: 100
   MaxBlood: 100
 --- !u!212 &2108614230

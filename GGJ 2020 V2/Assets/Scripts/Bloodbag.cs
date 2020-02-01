@@ -4,11 +4,19 @@ using UnityEngine;
 
 public class Bloodbag : Item
 {
-    public float HealAmount = 33.0f;
+    public float Capacity = 33f;
+    public float Remaining = 0f;
+
+    public float HealAmount = 5f;
 
     public override void Effect(Patient patient)
     {
-        patient.Heal(HealAmount);
-    }
-    
+        if (Remaining > HealAmount) {
+            patient.Heal(HealAmount);
+            Remaining -= HealAmount;
+        } else if (Remaining > 0f) {
+            patient.Heal(Remaining);
+            Remaining = 0f;
+        }
+    }  
 }
