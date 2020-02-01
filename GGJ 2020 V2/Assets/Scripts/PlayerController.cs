@@ -45,11 +45,11 @@ public class PlayerController : MonoBehaviour
         var hit = Physics2D.Raycast(ray.origin, ray.direction, Mathf.Infinity);
 
         if (hit.collider != null) {
-            var item = hit.collider.gameObject.GetComponent<TraySpot>().item;
-            if (item != null) {
+            var traySpot= hit.collider.gameObject.GetComponent<TraySpot>();
+            if (traySpot != null) {
                 Debug.Log("Hit item");
                 if (CommandQueue.Count < QueueSize) {
-                    CommandQueue.Enqueue(new TakeItemCommand(item));
+                    CommandQueue.Enqueue(new TakeItemCommand(traySpot));
                 }
             }
 
