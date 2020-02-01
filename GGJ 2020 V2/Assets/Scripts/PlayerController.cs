@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
 
 
     public int QueueSize;
+    private Patient _lastPatient;
 
     private Queue<Command> CommandQueue;
 
@@ -31,6 +32,7 @@ public class PlayerController : MonoBehaviour
         if (_currentCommand != null) {
             if (_currentCommand.IsDone) {
                 _currentCommand = null;
+                _lastPatient = null;
             }
         } else {
             if (CommandQueue.Count > 0) {
@@ -56,7 +58,8 @@ public class PlayerController : MonoBehaviour
             var patient = hit.collider.gameObject.GetComponent<Patient>();
             if (patient != null) {
                 Debug.Log("Hit patient");
-                if (CommandQueue.Count < QueueSize) {
+                if (CommandQueue.Count < QueueSize && patient != _lastPatient) {
+                    _lastPatient = patient;
                     QueueCommand(new GiveItemCommand(patient));
                 }
             }
@@ -84,10 +87,10 @@ public class PlayerController : MonoBehaviour
         /*if(CommandQueue.Count == 0 && command != _currentCommand)
         {
             CommandQueue.Enqueue(command);
-            Debug.Log(command.);
+            Debug.Log(command);
         }
 
-        else if((command.GetType()!= CommandQueue.Peek().GetType() && command.GetType() != _currentCommand.GetType()) )
+        else if((command.GetType() != _currentCommand.GetType()) )
         {
             
         }*/
