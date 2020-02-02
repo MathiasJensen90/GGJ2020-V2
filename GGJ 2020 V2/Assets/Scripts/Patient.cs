@@ -26,12 +26,15 @@ public class Patient : MonoBehaviour
 
     public float MaxBlood = 100f;
 
+    public float InitialBlood = 50f;
+
     private float _bloodHeight;
 
     public ParticleSystem dyingParticles; 
 
     void Awake() {
         _bloodHeight = BloodSprite.size.y;
+        Blood = InitialBlood;
     }
 
     void Update()
@@ -43,9 +46,15 @@ public class Patient : MonoBehaviour
             if (Blood <= 0f)
             {
                 
-                GetComponent<SpriteRenderer>().color = Color.black;
                 IsDead = true;
                 PatientDead?.Raise(this.gameObject);
+
+                if (Item) {
+                    Destroy(Item.gameObject);
+                    ReplenishBB.Raise();
+                }
+
+                StartCoroutine(CureRoutine());
             }
 
             BloodSprite.transform.localScale = Vector3.Lerp(new Vector3(1f, 0f, 1f), Vector3.one, Blood / MaxBlood);
@@ -78,8 +87,8 @@ public class Patient : MonoBehaviour
 
         Collider2D.enabled = true;
         PatientAvatar.gameObject.SetActive(true);
+
+        Blood = InitialBlood;
+        IsDead = false;
     }
-
-
-  
 }
