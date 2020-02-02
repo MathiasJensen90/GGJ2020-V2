@@ -9,6 +9,7 @@ public class Patient : MonoBehaviour
 
     public float CureTimeout = 5f;
 
+
     public GameEvent PatientDead, PatientCured, ReplenishBB;
 
     public GameObject MountingPoint;
@@ -19,6 +20,7 @@ public class Patient : MonoBehaviour
     public bool IsDead=false;
 
     public SpriteRenderer BloodSprite;
+    public SpriteRenderer HighlightRenderer;
 
     public Item Item;
 
@@ -29,8 +31,12 @@ public class Patient : MonoBehaviour
     public float InitialBlood = 50f;
 
     private float _bloodHeight;
+
+    private bool _over90;
     
     private HighscoreManager _HSManager;
+
+    private Color _highlightColor;
 
     public ParticleSystem dyingParticles; 
 
@@ -38,6 +44,7 @@ public class Patient : MonoBehaviour
         _bloodHeight = BloodSprite.size.y;
         Blood = InitialBlood;
         _HSManager = FindObjectOfType<HighscoreManager>();
+        _highlightColor = HighlightRenderer.material.GetColor("_OutlineColor");
     }
 
     void Update()
@@ -63,6 +70,19 @@ public class Patient : MonoBehaviour
             BloodSprite.transform.localScale = Vector3.Lerp(new Vector3(1f, 0f, 1f), Vector3.one, Blood / MaxBlood);
 
             Item?.Effect(this);
+
+            if (!_over90 && Blood >= 90f) {
+                HighlightRenderer.material.SetFloat("_OutlineThickness", 5);
+                HighlightRenderer.material.SetColor("_OutlineColor", Color.green);
+                _over90 = true;
+            }
+
+            if (_over90 && Blood < 90f) {
+                print("oiiiiiii");
+                HighlightRenderer.material.SetFloat("_OutlineThickness", 0);
+                HighlightRenderer.material.SetColor("_OutlineColor", _highlightColor);
+                _over90 = false;
+            }
         }
 
         
