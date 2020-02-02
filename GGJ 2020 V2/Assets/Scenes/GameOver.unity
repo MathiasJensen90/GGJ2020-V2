@@ -809,6 +809,7 @@ MonoBehaviour:
   ScoreManager: {fileID: 11400000, guid: 70f19fe107912b548b7cd3e226c6d17a, type: 2}
   Text: {fileID: 1143152165}
   HSText: {fileID: 583472619}
+  Highscores: {fileID: 11400000, guid: 957d7d647917bb340b83c183d079560c, type: 2}
 --- !u!1 &1122721060
 GameObject:
   m_ObjectHideFlags: 0
