@@ -26,13 +26,6 @@ public class GameOverManager : MonoBehaviour
         SaveLoad.Load();
 
         UpdateHighScores();
-        
-        for (int i = 0; i < HSText.Length; i++)
-        {
-            HSText[i].text = Highscores.HighscoreList.highscores[i].ToString();
-        }
-
-        
     }
 
     public void GoToMainMenu() {
@@ -41,11 +34,28 @@ public class GameOverManager : MonoBehaviour
 
     public void UpdateHighScores()
     {
-        if (Highscores.HighscoreList.highscores.Any(x => x < ScoreManager.PatientsCured)) {
+        var updating = Highscores.HighscoreList.highscores.Any(x => x < ScoreManager.PatientsCured);
+        if (updating) {
             Highscores.HighscoreList.highscores[5] = ScoreManager.PatientsCured;
             Array.Sort(Highscores.HighscoreList.highscores);
+
+            SaveLoad.Save();
+        } 
+
+        for (int i = 0; i < HSText.Length; i++)
+        {
+            HSText[i].text = Highscores.HighscoreList.highscores[i].ToString();
+        }
+        
+        if (updating) {
+            var index = Array.IndexOf(Highscores.HighscoreList.highscores, ScoreManager.PatientsCured);
+            HSText[index].text = $"You cured: {HSText[index]}";
+            HSText[index].gameObject.GetComponent<Animator>().enabled = true;
+            Text.text = "";
+        } else {
+            Text.text = $"You cured: {ScoreManager.PatientsCured}";
+            Text.gameObject.GetComponent<Animator>().enabled = true;
         }
 
-        SaveLoad.Save();
     }
 }
