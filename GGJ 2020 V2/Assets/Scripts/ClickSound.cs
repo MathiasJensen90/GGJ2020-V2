@@ -12,6 +12,6 @@ public class ClickSound : MonoBehaviour
     public void Playclick()
     {
         int randomInt = Random.Range(0, clickSound.Length);
-        AudioSource.PlayClipAtPoint(clickSound[randomInt], transform.position, 0.8f);
+        AudioSource.PlayClipAtPoint(clickSound[randomInt], transform.position, 0.5f);
     }
 }
