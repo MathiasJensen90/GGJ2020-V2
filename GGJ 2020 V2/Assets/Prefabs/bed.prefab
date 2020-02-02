@@ -740,6 +740,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75d5add30fec4d249af245e6349b4575, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dying:
+  - {fileID: 8300000, guid: 548d0e972dea2834f822f24c8e8088a3, type: 3}
+  - {fileID: 8300000, guid: 76c33ca2a62f25b4b9854eaf4a2d4beb, type: 3}
+  - {fileID: 8300000, guid: 8e0bfc1c171a5d14b90690cd6b47815b, type: 3}
   BloodLossRate: 5
   CureTimeout: 5
   PatientDead: {fileID: 11400000, guid: 75a77e6c52a77bd4daa2b0be93ced42c, type: 2}

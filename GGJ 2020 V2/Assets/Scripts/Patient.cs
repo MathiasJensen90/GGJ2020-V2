@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class Patient : MonoBehaviour
 {
+
+    //sound
+
+    public AudioClip[] dying = new AudioClip[3]; 
+
+
     // How much blood to lose per second
     public float BloodLossRate = 5f;
 
@@ -50,6 +56,8 @@ public class Patient : MonoBehaviour
             {
                 
                 IsDead = true;
+                int randomClip = Random.Range(0, 3); 
+                AudioSource.PlayClipAtPoint(dying[randomClip], transform.position, 0.1f);
                 PatientDead?.Raise(this.gameObject);
 
                 if (Item) {
