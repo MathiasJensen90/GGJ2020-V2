@@ -19,21 +19,21 @@ AnimationClip:
   m_FloatCurves: []
   m_PPtrCurves:
   - curve:
-    - time: 0
+    - time: 0.6666667
       value: {fileID: 21300000, guid: 328a61b63fa7cda4fbd25de16624950e, type: 3}
-    - time: 0.15
+    - time: 0.8
       value: {fileID: 21300000, guid: 8844fd0435fd6ba4db4516057457667a, type: 3}
-    - time: 0.3
+    - time: 0.95
       value: {fileID: 21300000, guid: f5acb9b51c29f784ca84db74c394ed98, type: 3}
-    - time: 0.45
+    - time: 1.0833334
       value: {fileID: 21300000, guid: c0e310c06b4a01042a6d3d26696d83bf, type: 3}
-    - time: 0.5833333
+    - time: 1.2
       value: {fileID: 21300000, guid: 81e25ff523c716e47a1fbde3811f32a9, type: 3}
-    - time: 0.73333335
+    - time: 1.3333334
       value: {fileID: 21300000, guid: 80c1112345f56f0438b93508e6817239, type: 3}
-    - time: 0.8833333
+    - time: 1.4833333
       value: {fileID: 21300000, guid: 2074190799d0dcd4bbe3761e661ec0f1, type: 3}
-    - time: 1.0333333
+    - time: 1.6166667
       value: {fileID: 21300000, guid: af3cfecba91017941a721456d6c06e13, type: 3}
     attribute: m_Sprite
     path: 
@@ -67,7 +67,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 1.05
+    m_StopTime: 1.6333333
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -87,7 +87,7 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events:
-  - time: 0
+  - time: 0.016666668
     functionName: 
     data: 
     objectReferenceParameter: {fileID: 0}
