@@ -9,11 +9,21 @@ public class GameOverManager : MonoBehaviour
 
     public TMPro.TextMeshProUGUI Text;
 
+    public TMPro.TextMeshProUGUI HSText;
+
     public void Awake() {
         Text.text = $"You cured: {ScoreManager.PatientsCured}";
+        UpdateHighScores();
     }
 
     public void GoToMainMenu() {
         SceneManager.LoadScene("Menu");
+    }
+
+    public void UpdateHighScores()
+    {
+        HighscoreList.highscores[0].score = 5;
+
+        HSText.text = HighscoreList.highscores.ToString();
     }
 }
