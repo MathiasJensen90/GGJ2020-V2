@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class Patient : MonoBehaviour
 {
+
+    //sound
+
+    public AudioClip[] dying = new AudioClip[3];
+    public AudioClip[] curing = new AudioClip[4];
+
+
     // How much blood to lose per second
     public float BloodLossRate = 5f;
 
@@ -57,6 +64,10 @@ public class Patient : MonoBehaviour
             {
                 
                 IsDead = true;
+                
+                    //Audio for death
+                int randomClip = Random.Range(0, 3); 
+                AudioSource.PlayClipAtPoint(dying[randomClip], transform.position, 0.1f);
                 PatientDead?.Raise(this.gameObject);
 
                 if (Item) {
@@ -105,6 +116,11 @@ public class Patient : MonoBehaviour
     private IEnumerator CureRoutine() {
         Collider2D.enabled = false;
         PatientAvatar.gameObject.SetActive(false);
+
+        //Audio for curing
+        int randomClip = Random.Range(0, 4);
+        AudioSource.PlayClipAtPoint(curing[randomClip], transform.position, 0.2f);
+        PatientDead?.Raise(this.gameObject);
 
         yield return new WaitForSeconds(CureTimeout);
 
