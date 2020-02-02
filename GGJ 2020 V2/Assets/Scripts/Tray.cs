@@ -15,6 +15,7 @@ public class Tray : MonoBehaviour
             if (spot.item == null) {
                 spot.item = Instantiate(Bloodbag, spot.transform);
                 spot.item.transform.localPosition = Vector2.zero;
+                return;
             }
         }
     }

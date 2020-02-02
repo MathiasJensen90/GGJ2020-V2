@@ -28,6 +28,8 @@ public class Patient : MonoBehaviour
 
     private float _bloodHeight;
 
+    public ParticleSystem dyingParticles; 
+
     void Awake() {
         _bloodHeight = BloodSprite.size.y;
     }
@@ -40,7 +42,7 @@ public class Patient : MonoBehaviour
 
             if (Blood <= 0f)
             {
-                PatientDead.Raise(this.gameObject);
+                
                 GetComponent<SpriteRenderer>().color = Color.black;
                 IsDead = true;
             }
@@ -75,5 +77,12 @@ public class Patient : MonoBehaviour
 
         Collider2D.enabled = true;
         PatientAvatar.gameObject.SetActive(true);
+    }
+
+
+    public void ParticleSpawn()
+    {
+        dyingParticles.Play();
+        
     }
 }
