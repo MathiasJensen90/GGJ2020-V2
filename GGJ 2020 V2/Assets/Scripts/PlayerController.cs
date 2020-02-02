@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -104,7 +105,19 @@ public class PlayerController : MonoBehaviour
         CommandQueue.Enqueue(command);
     }
 
-    public void GoToGameOver() {
+    IEnumerator GameOver()
+    {
+        yield return new WaitForSeconds(2f);
         SceneManager.LoadScene("GameOver");
     }
+
+    public void GoToGameOver() {
+        StartCoroutine(GameOver());
+
+        
+        
+    }
+
+
+    
 }
