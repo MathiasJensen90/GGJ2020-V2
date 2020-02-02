@@ -248,6 +248,8 @@ GameObject:
   - component: {fileID: 7240479336071673733}
   - component: {fileID: 7240479336071673732}
   - component: {fileID: 1980662319693376116}
+  - component: {fileID: 7884198617674436645}
+  - component: {fileID: 3313482317516207431}
   m_Layer: 0
   m_Name: clockDisplay
   m_TagString: Untagged
@@ -332,8 +334,65 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f99b47d9fd400f64a8d62be69ab7f65d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BaseDifficultyMultiplier: 1
+  DifficultyMultiplier: 0
+  TimeForDifficultyIncrease: 20
   CountdownInSeconds: 60
   PointFactor: 1
   PointMultiplier: 1
   Text: {fileID: 4218302625563073645}
   GameOver: {fileID: 11400000, guid: b0a130041966a814888179955d94fc8d, type: 2}
+--- !u!114 &7884198617674436645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7240479336071673851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac73506ea8905fa4ab80ee407783e5b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 75a77e6c52a77bd4daa2b0be93ced42c, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1980662319693376116}
+        m_MethodName: AddTimeToTimer
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: -5
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &3313482317516207431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7240479336071673851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac73506ea8905fa4ab80ee407783e5b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: bf182c43c3932d84f92040a4a09ba070, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1980662319693376116}
+        m_MethodName: AddTimeToTimer
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 5
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

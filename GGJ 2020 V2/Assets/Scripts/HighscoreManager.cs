@@ -40,4 +40,9 @@ public class HighscoreManager : MonoBehaviour
 
         DifficultyMultiplier = BaseDifficultyMultiplier + _playTime / TimeForDifficultyIncrease;
     }
+
+    public void AddTimeToTimer(float time)
+    {
+        CountdownInSeconds += time;
+    }
 }
