@@ -29,19 +29,22 @@ public class Patient : MonoBehaviour
     public float InitialBlood = 50f;
 
     private float _bloodHeight;
+    
+    private HighscoreManager _HSManager;
 
     public ParticleSystem dyingParticles; 
 
     void Awake() {
         _bloodHeight = BloodSprite.size.y;
         Blood = InitialBlood;
+        _HSManager = FindObjectOfType<HighscoreManager>();
     }
 
     void Update()
     {
         if (!IsDead)
         {
-            Blood -= BloodLossRate * Time.deltaTime;
+            Blood -= BloodLossRate * Time.deltaTime* _HSManager.DifficultyMultiplier;
 
             if (Blood <= 0f)
             {
