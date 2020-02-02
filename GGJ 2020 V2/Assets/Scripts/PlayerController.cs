@@ -11,6 +11,8 @@ public class PlayerController : MonoBehaviour
 
     public ScoreManager ScoreManager;
 
+    public GameEvent Clicked;
+
 
     public int QueueSize;
     private Patient _lastPatient;
@@ -51,6 +53,7 @@ public class PlayerController : MonoBehaviour
         var hit = Physics2D.Raycast(ray.origin, ray.direction, Mathf.Infinity, LayerMask.GetMask("Clickable") | LayerMask.GetMask("Both"));
 
         if (hit.collider != null) {
+            Clicked.Raise(this.gameObject);
             var traySpot= hit.collider.gameObject.GetComponent<TraySpot>();
             if (traySpot != null) {
                 Debug.Log("Hit item");
