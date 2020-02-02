@@ -45,6 +45,7 @@ public class Patient : MonoBehaviour
                 
                 GetComponent<SpriteRenderer>().color = Color.black;
                 IsDead = true;
+                PatientDead?.Raise(this.gameObject);
             }
 
             BloodSprite.transform.localScale = Vector3.Lerp(new Vector3(1f, 0f, 1f), Vector3.one, Blood / MaxBlood);
