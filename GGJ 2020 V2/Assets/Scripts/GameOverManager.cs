@@ -49,7 +49,7 @@ public class GameOverManager : MonoBehaviour
         
         if (updating) {
             var index = Array.IndexOf(Highscores.HighscoreList.highscores, ScoreManager.PatientsCured);
-            HSText[index].text = $"You cured: {HSText[index]}";
+            HSText[index].text = $"You cured: {ScoreManager.PatientsCured}";
             HSText[index].gameObject.GetComponent<Animator>().enabled = true;
             Text.text = "";
         } else {
