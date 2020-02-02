@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -98,5 +99,9 @@ public class PlayerController : MonoBehaviour
             
         }*/
         CommandQueue.Enqueue(command);
+    }
+
+    public void GoToGameOver() {
+        SceneManager.LoadScene("GameOver");
     }
 }
