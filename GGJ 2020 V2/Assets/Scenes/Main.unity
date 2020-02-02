@@ -3665,7 +3665,7 @@ PrefabInstance:
     - target: {fileID: 1554547482765830763, guid: b95ee767b66b12f48b33a7e6b91e3fd0,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1822975903491749198, guid: b95ee767b66b12f48b33a7e6b91e3fd0,
         type: 3}
@@ -3776,6 +3776,11 @@ PrefabInstance:
         type: 3}
       propertyPath: looping
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6531064667302627067, guid: b95ee767b66b12f48b33a7e6b91e3fd0,
+        type: 3}
+      propertyPath: ShapeModule.radiusThickness
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b95ee767b66b12f48b33a7e6b91e3fd0, type: 3}
