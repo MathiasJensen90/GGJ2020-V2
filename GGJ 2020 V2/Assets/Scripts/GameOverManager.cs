@@ -37,9 +37,11 @@ public class GameOverManager : MonoBehaviour
     {
         var updating = Highscores.HighscoreList.highscores.Any(x => x < ScoreManager.PatientsCured);
         if (updating) {
+            foreach (var highscore in Highscores.HighscoreList.highscores) print(highscore);
             Highscores.HighscoreList.highscores[0] = ScoreManager.PatientsCured;
             Array.Sort(Highscores.HighscoreList.highscores);
 
+            foreach (var highscore in Highscores.HighscoreList.highscores) print(highscore);
             SaveLoad.Save();
         } 
 
