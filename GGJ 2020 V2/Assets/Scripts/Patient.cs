@@ -130,7 +130,7 @@ public class Patient : MonoBehaviour
     {
            //Audio for death
                 int randomClip = Random.Range(0, 3); 
-                AudioSource.PlayClipAtPoint(dying[randomClip], transform.position, 0.1f);
+                AudioSource.PlayClipAtPoint(dying[randomClip], transform.position, 0.5f);
               
     }
 
