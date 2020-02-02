@@ -57,10 +57,7 @@ public class Patient : MonoBehaviour
             {
                 
                 IsDead = true;
-                
-                    //Audio for death
-                int randomClip = Random.Range(0, 3); 
-                AudioSource.PlayClipAtPoint(dying[randomClip], transform.position, 0.1f);
+
                 PatientDead?.Raise(this.gameObject);
 
                 if (Item) {
@@ -97,10 +94,7 @@ public class Patient : MonoBehaviour
         Collider2D.enabled = false;
         PatientAvatar.gameObject.SetActive(false);
 
-        //Audio for curing
-        int randomClip = Random.Range(0, 4);
-        AudioSource.PlayClipAtPoint(curing[randomClip], transform.position, 0.2f);
-        PatientDead?.Raise(this.gameObject);
+    
 
         yield return new WaitForSeconds(CureTimeout);
 
@@ -110,4 +104,24 @@ public class Patient : MonoBehaviour
         Blood = InitialBlood;
         IsDead = false;
     }
+
+
+    public void playDeathSound()
+    {
+           //Audio for death
+                int randomClip = Random.Range(0, 3); 
+                AudioSource.PlayClipAtPoint(dying[randomClip], transform.position, 0.1f);
+              
+    }
+
+
+    public void playCureSound()
+    {
+        //Audio for curing
+        int randomClip = Random.Range(0, 4);
+        AudioSource.PlayClipAtPoint(curing[randomClip], transform.position, 1f);
+      
+    }
+
+
 }
