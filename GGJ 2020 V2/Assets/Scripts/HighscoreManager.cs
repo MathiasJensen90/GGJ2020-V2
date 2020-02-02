@@ -29,7 +29,7 @@ public class HighscoreManager : MonoBehaviour
 
     void Update() {
         var dt = new DateTime();
-        dt = dt.AddSeconds(CountdownInSeconds);
+        dt = dt.AddSeconds(Mathf.Max(CountdownInSeconds,0));
         Text.text = dt.ToString("mm:ss");
 
         CountdownInSeconds -= Time.deltaTime * PointFactor * PointMultiplier;
