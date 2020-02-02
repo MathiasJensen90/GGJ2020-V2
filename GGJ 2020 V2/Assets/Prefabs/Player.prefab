@@ -503,6 +503,8 @@ GameObject:
   - component: {fileID: 6894749379513095980}
   - component: {fileID: 212400089626543909}
   - component: {fileID: 1140642236113271432}
+  - component: {fileID: 4828980718607492241}
+  - component: {fileID: 2540279703358008623}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -727,3 +729,46 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &4828980718607492241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8751486792760203119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac73506ea8905fa4ab80ee407783e5b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: eec775bd730777848bc25b9e77576de7, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2540279703358008623}
+        m_MethodName: Playclick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2540279703358008623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8751486792760203119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d4f8860436d1044c8ca9fce0f0e2d24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clickSound:
+  - {fileID: 8300000, guid: a55efd7b775986a4d96b528df8f523f3, type: 3}
+  - {fileID: 8300000, guid: a55efd7b775986a4d96b528df8f523f3, type: 3}
+  - {fileID: 8300000, guid: a55efd7b775986a4d96b528df8f523f3, type: 3}
