@@ -7,29 +7,25 @@ using System.IO;
  
 public class SaveLoad
 {
-    void Sart()
-    {
+    public HighscoreVariable Highscores;
 
-    }
-
-    public static void Save()
+    public void Save()
     {
-        BinaryFormatter bf = new BinaryFormatter();
-        FileStream file = File.Open(Application.persistentDataPath + "/save.dat", FileMode.OpenOrCreate);
-        HighscoreList hsList = new HighscoreList();
-        bf.Serialize(file, hsList);
-        file.Close();
+        var bf = new BinaryFormatter();
+        using(var file = File.Open(Application.persistentDataPath + "/save.dat", FileMode.OpenOrCreate)) {
+            bf.Serialize(file, Highscores.HighscoreList);
+        }
     }
 
     public static bool Load()
     {
         if (File.Exists(Application.persistentDataPath + "/save.dat"))
         {
-            BinaryFormatter bf = new BinaryFormatter();
-            FileStream file = File.Open(Application.persistentDataPath + "/save.dat", FileMode.Open);
-            HighscoreList serializableSaveData = (HighscoreList)bf.Deserialize(file);
-            file.Close();
-            //serializableSaveData.RestoreSaveData();
+            var bf = new BinaryFormatter();
+            using (var file = File.Open(Application.persistentDataPath + "/save.dat", FileMode.Open)) {
+                var serializableSaveData = (HighscoreList)bf.Deserialize(file);
+            }
+
             return (true);
         }
         else

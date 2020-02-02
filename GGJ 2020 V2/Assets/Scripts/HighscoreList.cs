@@ -5,6 +5,5 @@ using UnityEngine;
 [System.Serializable]
 public class HighscoreList
 {
-    public static HighscoreEntry[] highscores = new HighscoreEntry[5];
-
+    public int[] highscores = new int[5];
 }
