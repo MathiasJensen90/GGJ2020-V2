@@ -11,7 +11,7 @@ public class GameOverManager : MonoBehaviour
 
     public TMPro.TextMeshProUGUI Text;
 
-    public TMPro.TextMeshProUGUI HSText;
+    public TMPro.TextMeshProUGUI[] HSText = new TMPro.TextMeshProUGUI[5];
 
     public HighscoreVariable Highscores;
 
@@ -26,8 +26,13 @@ public class GameOverManager : MonoBehaviour
         SaveLoad.Load();
 
         UpdateHighScores();
+        
+        for (int i = 0; i < HSText.Length; i++)
+        {
+            HSText[i].text = Highscores.HighscoreList.highscores[i].ToString();
+        }
 
-        HSText.text = Highscores.HighscoreList.highscores.ToString();
+        
     }
 
     public void GoToMainMenu() {
