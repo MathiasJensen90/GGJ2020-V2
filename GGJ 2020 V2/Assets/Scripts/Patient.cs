@@ -7,13 +7,15 @@ public class Patient : MonoBehaviour
 
     //sound
 
-    public AudioClip[] dying = new AudioClip[3]; 
+    public AudioClip[] dying = new AudioClip[3];
+    public AudioClip[] curing = new AudioClip[4];
 
 
     // How much blood to lose per second
     public float BloodLossRate = 5f;
 
     public float CureTimeout = 5f;
+
 
     public GameEvent PatientDead, PatientCured, ReplenishBB;
 
@@ -25,6 +27,7 @@ public class Patient : MonoBehaviour
     public bool IsDead=false;
 
     public SpriteRenderer BloodSprite;
+    public SpriteRenderer HighlightRenderer;
 
     public Item Item;
 
@@ -35,8 +38,12 @@ public class Patient : MonoBehaviour
     public float InitialBlood = 50f;
 
     private float _bloodHeight;
+
+    private bool _over90;
     
     private HighscoreManager _HSManager;
+
+    private Color _highlightColor;
 
     public ParticleSystem dyingParticles; 
 
@@ -44,6 +51,7 @@ public class Patient : MonoBehaviour
         _bloodHeight = BloodSprite.size.y;
         Blood = InitialBlood;
         _HSManager = FindObjectOfType<HighscoreManager>();
+        _highlightColor = HighlightRenderer.material.GetColor("_OutlineColor");
     }
 
     void Update()
@@ -56,8 +64,7 @@ public class Patient : MonoBehaviour
             {
                 
                 IsDead = true;
-                int randomClip = Random.Range(0, 3); 
-                AudioSource.PlayClipAtPoint(dying[randomClip], transform.position, 0.1f);
+
                 PatientDead?.Raise(this.gameObject);
 
                 if (Item) {
@@ -71,6 +78,19 @@ public class Patient : MonoBehaviour
             BloodSprite.transform.localScale = Vector3.Lerp(new Vector3(1f, 0f, 1f), Vector3.one, Blood / MaxBlood);
 
             Item?.Effect(this);
+
+            if (!_over90 && Blood >= 90f) {
+                HighlightRenderer.material.SetFloat("_OutlineThickness", 5);
+                HighlightRenderer.material.SetColor("_OutlineColor", Color.green);
+                _over90 = true;
+            }
+
+            if (_over90 && Blood < 90f) {
+                print("oiiiiiii");
+                HighlightRenderer.material.SetFloat("_OutlineThickness", 0);
+                HighlightRenderer.material.SetColor("_OutlineColor", _highlightColor);
+                _over90 = false;
+            }
         }
 
         
@@ -94,6 +114,8 @@ public class Patient : MonoBehaviour
         Collider2D.enabled = false;
         PatientAvatar.gameObject.SetActive(false);
 
+    
+
         yield return new WaitForSeconds(CureTimeout);
 
         Collider2D.enabled = true;
@@ -102,4 +124,24 @@ public class Patient : MonoBehaviour
         Blood = InitialBlood;
         IsDead = false;
     }
+
+
+    public void playDeathSound()
+    {
+           //Audio for death
+                int randomClip = Random.Range(0, 3); 
+                AudioSource.PlayClipAtPoint(dying[randomClip], transform.position, 0.5f);
+              
+    }
+
+
+    public void playCureSound()
+    {
+        //Audio for curing
+        int randomClip = Random.Range(0, 4);
+        AudioSource.PlayClipAtPoint(curing[randomClip], transform.position, 1f);
+      
+    }
+
+
 }

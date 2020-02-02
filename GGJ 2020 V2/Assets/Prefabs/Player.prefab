@@ -610,6 +610,7 @@ MonoBehaviour:
   Avatar: {fileID: 8751486792760203113}
   Bloodbank: {fileID: 0}
   ScoreManager: {fileID: 11400000, guid: 70f19fe107912b548b7cd3e226c6d17a, type: 2}
+  Clicked: {fileID: 11400000, guid: eec775bd730777848bc25b9e77576de7, type: 2}
   QueueSize: 2
 --- !u!95 &5332661283494342621
 Animator:

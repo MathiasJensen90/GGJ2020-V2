@@ -653,6 +653,7 @@ GameObject:
   - component: {fileID: 8535767643870073106}
   - component: {fileID: 7474077861444488576}
   - component: {fileID: 5958701843491268529}
+  - component: {fileID: 7600913524416914649}
   m_Layer: 9
   m_Name: bed sprite
   m_TagString: Untagged
@@ -744,8 +745,13 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 548d0e972dea2834f822f24c8e8088a3, type: 3}
   - {fileID: 8300000, guid: 76c33ca2a62f25b4b9854eaf4a2d4beb, type: 3}
   - {fileID: 8300000, guid: 8e0bfc1c171a5d14b90690cd6b47815b, type: 3}
-  BloodLossRate: 5
-  CureTimeout: 5
+  curing:
+  - {fileID: 8300000, guid: 4034a52d155fc0b4b8719d8b7c711a39, type: 3}
+  - {fileID: 8300000, guid: 35c46d6b8e56fe4438a4670133705003, type: 3}
+  - {fileID: 8300000, guid: b47728493e11ddb4395dcb8fa3385b11, type: 3}
+  - {fileID: 8300000, guid: 34ec26423f79eb644889191ec20dec3c, type: 3}
+  BloodLossRate: 1
+  CureTimeout: 8
   PatientDead: {fileID: 11400000, guid: 75a77e6c52a77bd4daa2b0be93ced42c, type: 2}
   PatientCured: {fileID: 11400000, guid: bf182c43c3932d84f92040a4a09ba070, type: 2}
   ReplenishBB: {fileID: 11400000, guid: 8d3b31696ef864543896114713fb574b, type: 2}
@@ -754,10 +760,11 @@ MonoBehaviour:
   Collider2D: {fileID: 7474077861444488576}
   IsDead: 0
   BloodSprite: {fileID: 3578535383831113286}
+  HighlightRenderer: {fileID: 4219738316496715925}
   Item: {fileID: 0}
   Blood: 50
   MaxBlood: 100
-  InitialBlood: 50
+  InitialBlood: 60
   dyingParticles: {fileID: 0}
 --- !u!61 &7474077861444488576
 BoxCollider2D:
@@ -803,6 +810,45 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 8558762417147597914}
         m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 8535767643870073106}
+        m_MethodName: playDeathSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  Target: {fileID: 7235159421696589750}
+--- !u!114 &7600913524416914649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7235159421696589750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ebd99f302cf3b142bf86323f6045fc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: bf182c43c3932d84f92040a4a09ba070, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8535767643870073106}
+        m_MethodName: playCureSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
