@@ -19,6 +19,7 @@ public class GameOverManager : MonoBehaviour
 
     public void Awake() {
         SaveLoad = new SaveLoad();
+        print(SaveLoad.PathString);
 
         Text.text = $"You cured: {ScoreManager.PatientsCured}";
 
@@ -36,7 +37,7 @@ public class GameOverManager : MonoBehaviour
     {
         var updating = Highscores.HighscoreList.highscores.Any(x => x < ScoreManager.PatientsCured);
         if (updating) {
-            Highscores.HighscoreList.highscores[4] = ScoreManager.PatientsCured;
+            Highscores.HighscoreList.highscores[0] = ScoreManager.PatientsCured;
             Array.Sort(Highscores.HighscoreList.highscores);
 
             SaveLoad.Save();
