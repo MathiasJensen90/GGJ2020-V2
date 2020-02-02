@@ -81,9 +81,5 @@ public class Patient : MonoBehaviour
     }
 
 
-    public void ParticleSpawn()
-    {
-        dyingParticles.Play();
-        
-    }
+  
 }
