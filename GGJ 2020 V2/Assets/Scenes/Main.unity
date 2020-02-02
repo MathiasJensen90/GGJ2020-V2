@@ -1723,7 +1723,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 67236218}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.07, y: -2.13, z: 0}
+  m_LocalPosition: {x: 1.96, y: -2.13, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1019133125}
@@ -1743,7 +1743,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_LightType: 1
   m_BlendStyleIndex: 0
-  m_FalloffIntensity: 0.677
+  m_FalloffIntensity: 0.873
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 0.32
   m_LightVolumeOpacity: 0
@@ -1763,15 +1763,15 @@ MonoBehaviour:
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
-  m_ShapeLightFalloffSize: 0.5
+  m_ShapeLightFalloffSize: 1.6
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
-  - {x: -1.9248136, y: -0.39036036, z: 0}
-  - {x: 2.0618157, y: -0.47258997, z: 0}
-  - {x: 2.0915108, y: -0.04683876, z: 0.00000035762787}
-  - {x: 2.007015, y: 0.6370492, z: 0}
-  - {x: -1.8700131, y: 0.55482006, z: 0}
-  - {x: -1.9363286, y: 0.0079808235, z: 0.00000035762787}
+  - {x: -2.3351398, y: -0.41772532, z: 0}
+  - {x: 2.6909819, y: -0.49995446, z: 0}
+  - {x: 2.802742, y: 0.007890701, z: 0.00000035762787}
+  - {x: 2.7182472, y: 0.74650836, z: 0}
+  - {x: -2.3076935, y: 0.74637365, z: 0}
+  - {x: -2.4560742, y: 0.19953418, z: 0.00000035762787}
 --- !u!1001 &108393066
 PrefabInstance:
   m_ObjectHideFlags: 0

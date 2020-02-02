@@ -26,23 +26,38 @@ public class Patient : MonoBehaviour
 
     public float MaxBlood = 100f;
 
+    public float InitialBlood = 50f;
+
     private float _bloodHeight;
+    
+    private HighscoreManager _HSManager;
+
+    public ParticleSystem dyingParticles; 
 
     void Awake() {
         _bloodHeight = BloodSprite.size.y;
+        Blood = InitialBlood;
+        _HSManager = FindObjectOfType<HighscoreManager>();
     }
 
     void Update()
     {
         if (!IsDead)
         {
-            Blood -= BloodLossRate * Time.deltaTime;
+            Blood -= BloodLossRate * Time.deltaTime* _HSManager.DifficultyMultiplier;
 
             if (Blood <= 0f)
             {
-                PatientDead.Raise(this.gameObject);
-                GetComponent<SpriteRenderer>().color = Color.black;
+                
                 IsDead = true;
+                PatientDead?.Raise(this.gameObject);
+
+                if (Item) {
+                    Destroy(Item.gameObject);
+                    ReplenishBB.Raise();
+                }
+
+                StartCoroutine(CureRoutine());
             }
 
             BloodSprite.transform.localScale = Vector3.Lerp(new Vector3(1f, 0f, 1f), Vector3.one, Blood / MaxBlood);
@@ -75,5 +90,8 @@ public class Patient : MonoBehaviour
 
         Collider2D.enabled = true;
         PatientAvatar.gameObject.SetActive(true);
+
+        Blood = InitialBlood;
+        IsDead = false;
     }
 }
