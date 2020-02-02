@@ -9,6 +9,7 @@ public class Patient : MonoBehaviour
 
     public AudioClip[] dying = new AudioClip[3];
     public AudioClip[] curing = new AudioClip[4];
+    public AudioClip[] ascending = new AudioClip[2]; 
 
 
     // How much blood to lose per second
@@ -140,7 +141,10 @@ public class Patient : MonoBehaviour
         //Audio for curing
         int randomClip = Random.Range(0, 4);
         AudioSource.PlayClipAtPoint(curing[randomClip], transform.position, 1f);
-      
+
+        int randomClip2 = Random.Range(0, 2);
+        AudioSource.PlayClipAtPoint(ascending[randomClip2], transform.position, 1f);
+
     }
 
 

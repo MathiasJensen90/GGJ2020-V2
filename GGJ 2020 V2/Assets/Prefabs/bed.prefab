@@ -752,6 +752,9 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 35c46d6b8e56fe4438a4670133705003, type: 3}
   - {fileID: 8300000, guid: b47728493e11ddb4395dcb8fa3385b11, type: 3}
   - {fileID: 8300000, guid: 34ec26423f79eb644889191ec20dec3c, type: 3}
+  ascending:
+  - {fileID: 8300000, guid: 41b340b9695ba5f4f82d11ef93f7b374, type: 3}
+  - {fileID: 8300000, guid: b3e160de2891fbd4795e71b515659833, type: 3}
   BloodLossRate: 1
   CureTimeout: 8
   PatientDead: {fileID: 11400000, guid: 75a77e6c52a77bd4daa2b0be93ced42c, type: 2}
